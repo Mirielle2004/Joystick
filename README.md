@@ -1,2 +1,2 @@
 # Joystick
-A touch based joystick for HTML5 and HTML5 Canvas designed with an intuitive API.
+A touch based joystick for HTML5 and Canvas designed with an intuitive API.
