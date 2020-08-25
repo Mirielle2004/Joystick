@@ -75,7 +75,7 @@ class Joystick {
         try {
             this.ctx = this.canvas.getContext("2d");
         } catch (error) {
-            throw ("Joystick2D Failed to intialize CANVAS");
+            throw ("Joystick Failed to intialize CANVAS");
         }
         
         // positioning
@@ -181,39 +181,41 @@ class Joystick {
     activate() {
 
         // mouse used in development
-        // this.ctx.canvas.addEventListener("mousedown", e => {
-        //     this.origin.x = e.clientX;
-        //     this.origin.y = e.clientY;
-        //     this.x = e.clientX;
-        //     this.y = e.clientY;
-        //     this.isActive = true;
-        //     this.isDisplay = true;           
-        //     this.isFading = false;
-        //     this.alpha = 1;
-        // });
+        if(!("touchstart" in document.documentElement)) {
+            this.ctx.canvas.addEventListener("mousedown", e => {
+                this.origin.x = e.clientX;
+                this.origin.y = e.clientY;
+                this.x = e.clientX;
+                this.y = e.clientY;
+                this.isActive = true;
+                this.isDisplay = true;           
+                this.isFading = false;
+                this.alpha = 1;
+            });
 
-        // this.ctx.canvas.addEventListener("mousemove", e => {
-        //     let diffX = e.clientX - this.origin.x;
-        //     let diffY = e.clientY - this.origin.y;
-        //     let magnitude = Math.hypot(diffX, diffY);
-        //     this.angle = Math.atan2(diffY, diffX);
-        //     this.isActive = true;
-        //     this.__diffX = diffX;
-        //     this.__diffY = diffY;
+            this.ctx.canvas.addEventListener("mousemove", e => {
+                let diffX = e.clientX - this.origin.x;
+                let diffY = e.clientY - this.origin.y;
+                let magnitude = Math.hypot(diffX, diffY);
+                this.angle = Math.atan2(diffY, diffX);
+                this.isActive = true;
+                this.__diffX = diffX;
+                this.__diffY = diffY;
 
-        //     let radius = Math.min(magnitude, this.radius);
-        //     this.x = this.origin.x + Math.cos(this.angle) * radius;
-        //     this.y = this.origin.y + Math.sin(this.angle) * radius;
-        // });
+                let radius = Math.min(magnitude, this.radius);
+                this.x = this.origin.x + Math.cos(this.angle) * radius;
+                this.y = this.origin.y + Math.sin(this.angle) * radius;
+            });
 
-        // this.ctx.canvas.addEventListener("mouseup", e => {
-        //     this.isActive = false;
-        //     this.x = this.origin.x;
-        //     this.y = this.origin.y;
-        //     if(this.speed.type.toLowerCase() === "dynamic")
-        //         this.speed.value = 0;
-        //     this.isFading = true;
-        // });
+            this.ctx.canvas.addEventListener("mouseup", e => {
+                this.isActive = false;
+                this.x = this.origin.x;
+                this.y = this.origin.y;
+                if(this.speed.type.toLowerCase() === "dynamic")
+                    this.speed.value = 0;
+                this.isFading = true;
+            });
+        }
 
         // check for touches
         if("touchstart" in document.documentElement) {
