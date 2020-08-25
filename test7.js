@@ -1,4 +1,4 @@
-console.log("test6")
+console.log("test7")
 
 CanvasRenderingContext2D.prototype.__proto__ = {
 
@@ -141,8 +141,8 @@ class Joystick {
      */
     update() {
         if(this.isDisplay) this.draw();
-//         this.moveObj();
-        this.obj.x++;
+        if(this.isActive) console.log("ooof");
+        this.moveObj();
         this.fadeIn();
     }
 
@@ -162,11 +162,11 @@ class Joystick {
             });
 
             this.ctx.canvas.addEventListener("mousemove", e => {
+                this.isActive = true;
                 let diffX = e.clientX - this.origin.x;
                 let diffY = e.clientY - this.origin.y;
                 let magnitude = Math.hypot(diffX, diffY);
                 this.angle = Math.atan2(diffY, diffX);
-                this.isActive = true;
                 this.__diffX = diffX;
                 this.__diffY = diffY;
 
