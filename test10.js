@@ -107,19 +107,22 @@ class Joystick {
      * @description move the binded object to a desired position
      */
     moveObj() {
-        if(this.isActive) {
-            if(!this.obj.x || !this.obj.y || typeof this.obj.x !== "number" 
-            || typeof this.obj.y !== "number") {
-                console.error("Binded component Must be a 2D Vector with a {[X, Y]:number} value");
-            } else {
-//                 let speed = this.accelerate();
-//                 this.obj.x += Math.cos(this.angle) * speed;
-//                 this.obj.y += Math.sin(this.angle) * speed;
-                this.obj.x += 1;
-                this.obj.y += 1;
-            }
+//         if(this.isActive) {
+//             if(!this.obj.x || !this.obj.y || typeof this.obj.x !== "number" 
+//             || typeof this.obj.y !== "number") {
+//                 console.error("Binded component Must be a 2D Vector with a {[X, Y]:number} value");
+//             } else {
+// //                 let speed = this.accelerate();
+// //                 this.obj.x += Math.cos(this.angle) * speed;
+// //                 this.obj.y += Math.sin(this.angle) * speed;
+//                 this.obj.x += 1;
+//                 this.obj.y += 1;
+//             }
             
-        }
+//         }
+//         this.isActive
+        this.obj.x++;
+        this.obj.y++;
     }
 
     /**
@@ -143,10 +146,7 @@ class Joystick {
      */
     update() {
         if(this.isDisplay) this.draw();
-        if(this.isActive) {
-            this.obj.x++;
-            this.obj.y++;
-        }
+        this.moveObj();
         this.fadeIn();
     }
 
