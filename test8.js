@@ -143,8 +143,10 @@ class Joystick {
      */
     update() {
         if(this.isDisplay) this.draw();
-        if(this.isActive) console.log("ooof");
-        this.moveObj();
+        if(this.isActive) {
+            this.obj.x++;
+            this.obj.y++;
+        }
         this.fadeIn();
     }
 
@@ -189,7 +191,7 @@ class Joystick {
 //         }
 
         // check for touches
-        if("touchstart" in document.documentElement) {
+//         if("touchstart" in document.documentElement) {
 
             this.ctx.canvas.addEventListener("touchstart", e => {
                 // const {pageX, pageX} = e.touches[0];
@@ -225,7 +227,7 @@ class Joystick {
                     this.speed.value = 0;
                 this.isFading = true;
             });
-        }
+//         }
         
     }
 }
