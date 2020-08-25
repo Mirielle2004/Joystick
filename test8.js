@@ -1,4 +1,4 @@
-console.log("test7")
+console.log("test8")
 
 CanvasRenderingContext2D.prototype.__proto__ = {
 
@@ -112,9 +112,11 @@ class Joystick {
             || typeof this.obj.y !== "number") {
                 console.error("Binded component Must be a 2D Vector with a {[X, Y]:number} value");
             } else {
-                let speed = this.accelerate();
-                this.obj.x += Math.cos(this.angle) * speed;
-                this.obj.y += Math.sin(this.angle) * speed;
+//                 let speed = this.accelerate();
+//                 this.obj.x += Math.cos(this.angle) * speed;
+//                 this.obj.y += Math.sin(this.angle) * speed;
+                this.obj.x += 1;
+                this.obj.y += 1;
             }
             
         }
