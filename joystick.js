@@ -181,9 +181,9 @@ class Joystick {
      * @description contain's events binded to the joystick
      */
     activate() {
-
+        console.log("activated");
         // mouse used in development
-        if(!("mousedown" in document.documentElement)) {
+        if("mousedown" in document.documentElement) {
             this.ctx.canvas.addEventListener("mousedown", e => {
                 this.origin.x = e.clientX;
                 this.origin.y = e.clientY;
