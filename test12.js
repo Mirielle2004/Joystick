@@ -108,19 +108,21 @@ class Joystick {
      */
     moveObj() {
         if(this.isActive) {
-            if(!this.obj.x || !this.obj.y || typeof this.obj.x !== "number" 
-            || typeof this.obj.y !== "number") {
-                console.error("Binded component Must be a 2D Vector with a {[X, Y]:number} value");
-            }
-//             else {
-// //                 let speed = this.accelerate();
-// //                 this.obj.x += Math.cos(this.angle) * speed;
-// //                 this.obj.y += Math.sin(this.angle) * speed;
-//                 this.obj.x += 1;
-//                 this.obj.y += 1;
+//             if(!this.obj.x || !this.obj.y || typeof this.obj.x !== "number" 
+//             || typeof this.obj.y !== "number") {
+//                 console.error("Binded component Must be a 2D Vector with a {[X, Y]:number} value");
 //             }
+// //             else {
+// // //                 let speed = this.accelerate();
+// // //                 this.obj.x += Math.cos(this.angle) * speed;
+// // //                 this.obj.y += Math.sin(this.angle) * speed;
+// //                 this.obj.x += 1;
+// //                 this.obj.y += 1;
+// //             }
             
-        }
+//         }
+       this.obj.x ++;
+       this.obj.y ++;
 //      
     }
 
