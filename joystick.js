@@ -62,7 +62,7 @@
 /**
  * @description principal object that initializes and draws a joystick
  */
-class Joystick2D {
+class Joystick {
     /**
      * 
      * @constructor
