@@ -115,8 +115,8 @@ class Joystick {
             
            let speed = this.accelerate();
            console.log(speed, ~~this.angle);
-           this.obj.x += Math.cos(this.angle) * speed;
-           this.obj.y += Math.sin(this.angle) * speed;;
+           this.obj.x += Math.cos(this.angle) * 1;
+           this.obj.y += Math.sin(this.angle) * 1;
         }
 //      
     }
