@@ -1,4 +1,4 @@
-console.log("test2")
+console.log("test3")
 
 CanvasRenderingContext2D.prototype.__proto__ = {
 
@@ -75,8 +75,7 @@ class Joystick {
 
         this.__diffX = null;
         this.__diffY = null;
-     
-       console.log("Created ");
+        console.log("joystick created");
     }
 
     /**
@@ -141,7 +140,8 @@ class Joystick {
      * @description call this method to update the joystick
      */
     update() {
-        if(this.isDisplay) this.draw();
+        this.draw();
+//         if(this.isDisplay) this.draw();
         this.moveObj();
         this.fadeIn();
     }
