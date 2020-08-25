@@ -1,4 +1,4 @@
-console.log("test8")
+console.log("test13")
 
 CanvasRenderingContext2D.prototype.__proto__ = {
 
@@ -119,10 +119,10 @@ class Joystick {
 // //                 this.obj.x += 1;
 // //                 this.obj.y += 1;
 // //             }
-            
-//         }
-       this.obj.x ++;
-       this.obj.y ++;
+
+           this.obj.x ++;
+           this.obj.y ++;
+        }
 //      
     }
 
