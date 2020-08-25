@@ -183,7 +183,7 @@ class Joystick {
     activate() {
 
         // mouse used in development
-        if(!("touchstart" in document.documentElement)) {
+        if(!("mousedown" in document.documentElement)) {
             this.ctx.canvas.addEventListener("mousedown", e => {
                 this.origin.x = e.clientX;
                 this.origin.y = e.clientY;
