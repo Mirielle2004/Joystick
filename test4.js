@@ -1,4 +1,4 @@
-console.log("test3")
+console.log("test4")
 
 CanvasRenderingContext2D.prototype.__proto__ = {
 
