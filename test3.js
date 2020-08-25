@@ -151,9 +151,7 @@ class Joystick {
      */
     activate() {
         console.log("activated");
-        // mouse used in development
-        if("mousedown" in document.documentElement) {
-            this.ctx.canvas.addEventListener("mousedown", e => {
+        this.ctx.canvas.addEventListener("mousedown", e => {
                 this.origin.x = e.clientX;
                 this.origin.y = e.clientY;
                 this.x = e.clientX;
@@ -185,8 +183,9 @@ class Joystick {
                 if(this.speed.type.toLowerCase() === "dynamic")
                     this.speed.value = 0;
                 this.isFading = true;
+                console.log("up");
             });
-        }
+//         }
 
         // check for touches
         if("touchstart" in document.documentElement) {
