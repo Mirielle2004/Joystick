@@ -219,11 +219,11 @@ class Joystick2D {
         if("touchstart" in document.documentElement) {
 
             this.ctx.canvas.addEventListener("touchstart", e => {
-                const {pageX, pageX} = e.touches[0];
-                this.origin.x = pageX;
-                this.origin.y = pageY;
-                this.x = pageX;
-                this.y = pageY;
+                // const {pageX, pageX} = e.touches[0];
+                this.origin.x = e.touches[0].pageX;
+                this.origin.y = e.touches[0].pageY;
+                this.x = e.touches[0].pageX;
+                this.y = e.touches[0].pageY;
                 this.isActive = true;
                 this.isDisplay = true;           
                 this.isFading = false;
