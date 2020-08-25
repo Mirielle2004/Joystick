@@ -108,6 +108,8 @@ class Joystick {
 
         this.__diffX = null;
         this.__diffY = null;
+     
+       console.log("Created ");
     }
 
     /**
