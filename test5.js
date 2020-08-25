@@ -1,4 +1,4 @@
-console.log("test4")
+console.log("test5")
 
 CanvasRenderingContext2D.prototype.__proto__ = {
 
@@ -140,8 +140,7 @@ class Joystick {
      * @description call this method to update the joystick
      */
     update() {
-        this.draw();
-//         if(this.isDisplay) this.draw();
+        if(this.isDisplay) this.draw();
         this.moveObj();
         this.fadeIn();
     }
@@ -150,7 +149,6 @@ class Joystick {
      * @description contain's events binded to the joystick
      */
     activate() {
-        console.log("activated");
         this.ctx.canvas.addEventListener("mousedown", e => {
                 this.origin.x = e.clientX;
                 this.origin.y = e.clientY;
