@@ -1,2 +1,4 @@
 # Joystick.js
-A touch based joystick for HTML5 and Canvas designed with an intuitive API.
+A touch based joystick for HTML5.
+
+The joystick is designed as an extension to the `CanvasRenderingContext2D`. 
